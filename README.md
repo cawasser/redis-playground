@@ -28,9 +28,15 @@ Once installed, start the container with:
 
     docker run --name my-redis -p:6379:6379 -d redis
 
-or, if you prefer to have redis-cli also running:
+if you'd like to access the redis-cli, run:
 
-    docker run -it --network redis-network --rm redis redis-cli -h my-redis
+    docker exec -it my-redis sh
+
+that should put you into a shell in the running container, where you can run: 
+    
+    redis-cli
+
+to startup the redis cli interface.  Run `ping` and you should get back `PONG` to test.
 
 ### Mac users:
 
