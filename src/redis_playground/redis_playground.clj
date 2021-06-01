@@ -82,7 +82,8 @@
   (log/info "REDIS PUBLISH =====> " channel)
   (wcar* (car/xadd (cs/stream-name channel) "*" :event message)))
 
-(exit-point "maps" [{:event-key "beta"} {:event-type :add-event}])
+(comment
+  (exit-point "maps" [{:event-key "beta"} {:event-type :add-event}]))
 
 
 

@@ -26,7 +26,11 @@ Windows is NOT a supported platform for Redis, so you will need to run Redis ins
 
 Once installed, start the container with:
 
-    docker run --name some-redis -p:6379:6379 -d redis
+    docker run --name my-redis -p:6379:6379 -d redis
+
+or, if you prefer to have redis-cli also running:
+
+    docker run -it --network redis-network --rm redis redis-cli -h my-redis
 
 ### Mac users:
 
